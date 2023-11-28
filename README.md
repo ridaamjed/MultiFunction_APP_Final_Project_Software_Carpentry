@@ -15,4 +15,8 @@ At the core of this dynamic application is Tkinter, a standard Python interface 
 
 Project Members - Rida Amjed
 
+App2 - The main program - run this
+
+The utils - Have the code for the Calculator, Unit Converter, Notepad.
+
 References: https://github.com/Zoall/Python-Final-Project-IT---2101
