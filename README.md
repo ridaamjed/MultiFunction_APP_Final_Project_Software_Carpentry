@@ -15,9 +15,9 @@ At the core of this dynamic application is Tkinter, a standard Python interface 
 
 Project Members - Rida Amjed
 
-App2 - The main program - run this
+app2.py - The main program - run this
 
-The utils - Have the code for the Calculator, Unit Converter, Notepad.
+Requirements - The utils - Have the code for the Calculator, Unit Converter, Notepad.
 
 The standalone app has been packaged into the zip file and needs to be downloaded and extracted to run.
 
