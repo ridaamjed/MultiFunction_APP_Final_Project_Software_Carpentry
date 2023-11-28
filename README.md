@@ -19,4 +19,6 @@ App2 - The main program - run this
 
 The utils - Have the code for the Calculator, Unit Converter, Notepad.
 
+The standalone app has been packaged into the zip file and needs to be downloaded and extracted to run.
+
 References: https://github.com/Zoall/Python-Final-Project-IT---2101
