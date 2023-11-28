@@ -1,0 +1,101 @@
+import tkinter as tk
+from tkinter.filedialog import askopenfilename, asksaveasfilename
+
+class Notepad:
+    def __init__(self):
+
+# Initialize the main window
+
+        self.window = tk.Tk()
+        self.window.title("Notes")
+        self.window.rowconfigure(0, weight = 1)
+        self.window.columnconfigure(1,  weight = 1)
+        self.window.geometry("375x667")
+
+# Create the layout and buttons
+
+        self.create_layout()
+        self.create_buttons()
+        
+
+    def create_layout(self):
+
+# Create the text editor and button frame
+
+        self.txt_editor = tk.Text(self.window, font = "Verdana", bg="Pink", fg="Black", insertbackground="Black")
+        self.button_frame = tk.Frame(self.window, relief = tk.RAISED, bd = 2, bg="Pink")
+
+# Grid layout for the text editor and button frame
+
+        self.txt_editor.grid(row = 0, column = 1, sticky = "NSEW")
+        self.button_frame.grid(row = 0, column = 0, sticky = "NS")
+
+    def create_buttons(self):
+
+# Create buttons for opening, saving, and going back
+
+        self.openfile_button = tk.Button(self.button_frame, text = "Open", command = self.open_file, bg="Pink", fg="White")
+        self.savefile_button = tk.Button(self.button_frame, text = "Save As", command = self.save_file, bg="Pink", fg="White")
+        self.backbtn = tk.Button(self.button_frame, text="←", bg="gray" , fg="white",font = ("Helvetica", 10, "bold"), relief = tk.RAISED, bd=5, justify = tk.CENTER, overrelief = tk.GROOVE, activebackground = "blue", activeforeground="white", command=self.back_btn)
+        
+# Grid layout for the buttons
+
+        self.openfile_button.grid(row = 1, column = 0, sticky = "EW", padx = 5, pady = 5)
+        self.savefile_button.grid(row = 2, column = 0, sticky = "EW", padx = 5)
+        self.backbtn.grid(row = 0, column = 0, sticky = "EW", padx = 5, pady = 5)
+        
+        
+
+    def open_file(self):
+
+# Open a file dialog to select a file for opening
+        
+        self.filepath = askopenfilename(
+        filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]
+     )
+        if not self.filepath:
+            return
+
+# Clear the text editor and insert the content of the selected file
+
+        self.txt_editor.delete("1.0", tk.END)
+        with open(self.filepath, mode="r", encoding="utf-8") as input_file:
+            self.text = input_file.read()
+            self.txt_editor.insert(tk.END, self.text)
+
+# Update the window title with the file path
+
+        self.window.title(f"My Notes - {self.filepath}")
+
+    def save_file(self):
+
+# Open a file dialog to select a file for saving
+
+        self.filepath = asksaveasfilename(
+        defaultextension=".txt",
+        filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")],
+        )
+        if not self.filepath:
+            return
+
+# Write the content of the text editor to the selected file
+
+        with open(self.filepath, mode="w", encoding="utf-8") as output_file:
+            self.text = self.txt_editor.get("1.0", tk.END)
+            output_file.write(self.text)
+
+# Update the window title with the file path
+
+        self.window.title(f"My Notes - {self.filepath}")
+        
+    def back_btn(self):
+
+# Close the current window and go back to the main application window
+
+        from app2 import App
+        self.window.destroy()
+        App()
+
+    
+
+
