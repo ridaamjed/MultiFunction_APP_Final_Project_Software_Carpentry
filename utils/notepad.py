@@ -41,7 +41,7 @@ class Notepad:
         self.openfile_button = tk.Button(self.button_frame, text = "Open", command = self.open_file, bg="Pink", fg="White")
         self.savefile_button = tk.Button(self.button_frame, text = "Save As", command = self.save_file, bg="Pink", fg="White")
         self.backbtn = tk.Button(self.button_frame, text="←", bg="gray" , fg="white",font = ("Helvetica", 10, "bold"), relief = tk.RAISED, bd=5, justify = tk.CENTER, overrelief = tk.GROOVE, activebackground = "blue", activeforeground="white", command=self.back_btn)
-        self.Evaluatebtn = tk.Button(self.button_frame, text="Eval", bg="Pink" , fg="white",font = ("Helvetica", 10, "bold"), relief = tk.RAISED, bd=5, justify = tk.CENTER, overrelief = tk.GROOVE, activebackground = "blue", activeforeground="white", command=self.back_btn)
+        self.Evaluatebtn = tk.Button(self.button_frame, text="Eval", bg="Pink" , fg="white",font = ("Helvetica", 10, "bold"), relief = tk.RAISED, bd=5, justify = tk.CENTER, overrelief = tk.GROOVE, activebackground = "blue", activeforeground="white", command=self.evaluate_exp)
         self.Convertbtn = tk.Button(self.button_frame, text="Conv", bg="Pink" , fg="white",font = ("Helvetica", 10, "bold"), relief = tk.RAISED, bd=5, justify = tk.CENTER, overrelief = tk.GROOVE, activebackground = "blue", activeforeground="white", command=self.convert_exp)
 
 # Grid layout for the buttons
