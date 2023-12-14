@@ -201,6 +201,7 @@ class Calculator:
         self.update_total_label()
         try:
             self.current_expression = str(eval(self.total_expression))
+            self.calculation_history.append((self.total_expression, self.current_expression))
 
             self.total_expression = ""
         except Exception as e:
@@ -208,7 +209,6 @@ class Calculator:
         finally:        
             self.update_label()
         
-        self.calculation_history.append((self.total_expression, self.current_expression))
 
             
     def show_history(self):
