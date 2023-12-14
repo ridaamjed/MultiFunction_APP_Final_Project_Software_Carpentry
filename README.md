@@ -24,6 +24,6 @@ Requirements - The utils - Have the code for the Calculator, Unit Converter, Not
 
 The standalone app has been packaged into the zip file and needs to be downloaded and extracted to run.
 
-Last commit on 12-14-2023, was due to a small bug in the calculator. Very minor change in the calculator file.
+Last commit on 12-14-2023, was due to a small bug in the calculator. Very minor change in the calculator history file.
 
 References: https://github.com/Zoall/Python-Final-Project-IT---2101
